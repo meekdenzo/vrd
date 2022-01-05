@@ -1,0 +1,6 @@
+package-lock.json
+node_modules
+replay_*
+hs_err*
+checkfile.json
+checkfile-out.json
