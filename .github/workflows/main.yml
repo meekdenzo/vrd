@@ -16,4 +16,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run entrypoint.sh
-        run: sh ./entrypoint.sh
+        run: |
+          git diff --name-only HEAD^ HEAD
+          sh ./entrypoint.sh
