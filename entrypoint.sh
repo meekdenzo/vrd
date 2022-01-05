@@ -7,7 +7,7 @@ echo "Checking/installing dependencies..."
 command -v curl || sudo apt-get install -yq curl
 command -v jq || sudo apt-get install -yq jq
 
-CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep -v "^src/validate*")
+CHANGED_FILES=$(git diff-tree --no-commit-id -r $GITHUB_SHA | grep -v "^src/validate*")
 echo "$CHANGED_FILES"
 
 # Run configurations
