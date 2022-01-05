@@ -18,8 +18,6 @@ export VULN_REGEX_DETECTOR_ROOT
 ./configure
 cd ..
 
-# echo 'Configuration complete'
-
 # test
 echo '{"file":"./autoInject.js"}' > checkfile.json   
 perl ./bin/check-file.pl checkfile.json > checkfile-out.json
