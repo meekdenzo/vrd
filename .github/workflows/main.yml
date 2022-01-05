@@ -17,5 +17,6 @@ jobs:
 
       - name: Run entrypoint.sh
         run: |
+          git log
           git diff --name-only HEAD^ HEAD
           sh ./entrypoint.sh
