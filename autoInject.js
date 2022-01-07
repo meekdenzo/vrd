@@ -34,7 +34,7 @@ function parseParams(func) {
  *
  * The autoInject function is purely syntactic sugar and its semantics are
  * otherwise equivalent to [async.auto]{@link module:ControlFlow.auto}.
- *
+ **
  * @name autoInject
  * @static
  * @memberOf module:ControlFlow
