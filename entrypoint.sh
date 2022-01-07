@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 # Install dependencies
 echo "Checking/installing dependencies..."
 command -v curl || sudo apt-get install -yq curl
