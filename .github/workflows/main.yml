@@ -2,9 +2,9 @@ name: Vulnerable regex detector
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   workflow_dispatch:
 
@@ -14,6 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with: 
+          fetch-depth: '0'
 
       - name: Run entrypoint.sh
-        run: sh ./entrypoint.sh
+        run: |
+          sh ./entrypoint.sh
