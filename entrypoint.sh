@@ -22,8 +22,8 @@ cd ..
 echo '{"file":"./autoInject.js"}' > checkfile.json   
 perl ./bin/check-file.pl checkfile.json > checkfile-out.json
 jq -r '.vulnRegexes | .[]?' < checkfile-out.json
-# Scan for redos
 
+# Scan for redos
 SECONDS=0
 for i in ${CHANGED_FILES}
     do
