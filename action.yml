@@ -4,10 +4,11 @@ author: 'Meek Simbule <meekdenzo@gmail.com>'
 branding:
   icon: 'search'
   color: 'white'
- runs:
+runs:
   using: "composite"
   steps: 
     - shell: bash
       run: |
         chmod +x ${{ github.action_path }}/entrypoint.sh
         ${{ github.action_path }}/entrypoint.sh
+
