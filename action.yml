@@ -1,0 +1,11 @@
+name: 'vuln-regex-detector'
+description: 'This is an action to detect vulnerable regular expressions in a pull request.'
+author: 'Meek Simbule <meekdenzo@gmail.com>'
+branding:
+  icon: 'search'
+  color: 'white'
+ runs:
+  using: "composite"
+  steps: 
+    - shell: bash
+      run: ${{ github.action_path }}/entrypoint.sh
