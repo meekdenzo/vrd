@@ -1,4 +1,4 @@
-name: 'vrd'
+name: 'vuln-regex-detector'
 description: 'This is an action to detect vulnerable regular expressions in a pull request.'
 author: 'Meek Simbule <meekdenzo@gmail.com>'
 branding:
