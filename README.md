@@ -8,9 +8,16 @@ Add the following to your workflow configuration:
 
 ```yml
 ...
-- uses: meekdenzo/vrd@v1.0.0
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with: 
+          fetch-depth: '0'
+          
+      - name: Scan for redos
+        uses: meekdenzo/vrd@v1.0.0
 ...
 ```
+*Note that `fetch-depth: '0'`*
 
 ### Example
 
@@ -26,6 +33,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with: 
+          fetch-depth: '0'
+ 
       - name: Scan for redos
         uses: meekdenzo/vrd@v1.0.0
 ```
