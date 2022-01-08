@@ -4,7 +4,7 @@ author: 'Meek Simbule <meekdenzo@gmail.com>'
 branding:
   icon: 'search'
   color: 'white'
- runs:
+runs:
   using: "composite"
   steps: 
     - shell: bash
