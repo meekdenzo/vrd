@@ -14,7 +14,7 @@ Add the following to your workflow configuration:
           fetch-depth: '0'
           
       - name: Scan for redos
-        uses: meekdenzo/vrd@v1.0.0
+        uses: meekdenzo/vrd@v1.0.1
 ...
 ```
 *Note that `fetch-depth: '0'`*
@@ -37,5 +37,5 @@ jobs:
           fetch-depth: '0'
  
       - name: Scan for redos
-        uses: meekdenzo/vrd@v1.0.0
+        uses: meekdenzo/vrd@v1.0.1
 ```
