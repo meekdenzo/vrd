@@ -21,6 +21,7 @@ export VULN_REGEX_DETECTOR_ROOT
 cd ..
 
 # Scan for redos
+VULN_COUNT=0
 SECONDS=0
 for i in ${CHANGED_FILES}
     do
@@ -32,6 +33,17 @@ for i in ${CHANGED_FILES}
         echo "The following vulnerable regexes were found in $i"
         jq -r '.vulnRegexes | .[]?' < checkfile-out.json
         printf "\n\n\n\n"
+
+        COUNT=$(jq '.anyVulnRegexes' < checkfile-out.json)
+        VULN_COUNT=$((VULN_COUNT+$COUNT))
+
     done
 duration=$SECONDS;
 echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed for scan."
+
+if [ $VULN_COUNT -eq 0 ]; then
+    echo "No vulnerable regex was detected. You're good to go!"
+else
+    echo "$VULN_COUNT vulnerable regex(es) were detected. See logs above."
+    exit 10
+fi
