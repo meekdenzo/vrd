@@ -27,7 +27,7 @@ for i in ${CHANGED_FILES}
         echo "Scanning for vulnerable regexes in $i"
         echo '{"file":"'"$i"'"}' > checkfile.json
        
-        perl ./bin/check-file.pl checkfile.json > checkfile-out.json
+        perl ./$CLONE_DIR/bin/check-file.pl checkfile.json > checkfile-out.json
 
         echo "The following vulnerable regexes were found in $i"
         jq -r '.vulnRegexes | .[]?' < checkfile-out.json
