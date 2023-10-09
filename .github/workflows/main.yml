@@ -1,0 +1,19 @@
+name: vuln-regex-detector
+on:
+  push:
+    branches:
+      - "*"
+jobs:
+  build:
+    name: Scan for redos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          fetch-depth: "0"
+          python-version: "3.10"
+
+      - name: Run entrypoint.sh
+        run: |
+          sh ./entrypoint.sh
